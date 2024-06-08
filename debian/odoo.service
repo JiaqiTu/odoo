@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=odoo
 Group=odoo
-ExecStart=/usr/bin/odoo --config /etc/odoo/odoo.conf --logfile /var/log/odoo/odoo-server.log
+ExecStart=/bin/bash -c 'source /home/odoo/odoo-venv/bin/activate && exec /home/odoo/odoo-bin --config /home/odoo/debian/odoo.conf --logfile /var/log/odoo/odoo.log'
 KillMode=mixed
 
 [Install]
